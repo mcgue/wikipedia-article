@@ -6,10 +6,18 @@ import requests
 
 
 
-def print_article(name):
-    print(f'Hi, {name}')
+def print_article(article):
+    print(f'Hi, {article}')
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_article('PyCharm')
+    # set up scraper for page
+    response = requests.get(
+        url="https://en.wikipedia.org/wiki/Web_scraping",
+    )
+    # should print 200
+    print(response.status_code)
+
+    # Print link to article
+    print_article('here it is')
